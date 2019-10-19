@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>水滴按钮</title>
+    <style>
+        .btn{width: 42px;height: 42px; background: #9aabb7;margin: 100px auto;border-radius: 50%;text-align: center;font: 12px/42px "微软雅黑";color: #fff;cursor: pointer;}
+        @keyframes animate{
+            0% {
+                transform: scale(1, 1);
+            }20% {
+                transform: scale(1.2, .8);
+            }40% {
+                transform: scale(.8, 1.2);
+            }60% {
+                transform: scale(1.1, .9);
+            }80% {
+                transform: scale(.9, 1.1);
+            }100% {
+                transform: scale(1, 1);
+            }
+        }
+        .btn-active{animation: 1s animate linear;}
+    </style>
+</head>
+<body>
+<div class="btn" id="btn">More</div>
+<script>
+    var btn = document.querySelector("#btn")
+    btn.onmouseover = function(){
+        this.classList.add("btn-active")
+    }
+    btn.addEventListener("animationend",function(){
+        this.classList.remove("btn-active")
+    })
+</script>
+</body>
+</html>
